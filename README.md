@@ -1,87 +1,68 @@
-# 🚀 Ayush Das — Developer Portfolio
+# Lekoana Tebelelo's Portfolio
 
-Welcome to my first ever portfolio website:  
-🌐 **Live Demo : [ayushdas.vercel.app](https://ayushdas.vercel.app)**  
-This site showcases who I am — developer, creator, and builder — in the simplest yet most impactful way.
+This is the source code for my personal portfolio website, built with Next.js and TypeScript. It's a modern, single-page application designed to showcase my skills, projects, and professional background as a Full-Stack Developer with a focus on AI/ML.
 
-![Portfolio Preview](./public/preview.png)
+## ✨ Features
 
----
+- **Modern Tech Stack**: Built with Next.js 14 (App Router) and TypeScript for a robust and type-safe development experience.
+- **Sleek UI/UX**: Styled with Tailwind CSS for a clean, responsive, and utility-first design.
+- **Engaging Animations**: Utilizes Framer Motion for smooth page transitions and interactive animations.
+- **Dark Mode by Default**: A visually comfortable dark theme is set as the default.
+- **Organized Sections**: Clear and distinct sections for Home, About Me, Projects, Skills, and Contact.
+- **Interactive Elements**: Features a custom cursor, a preloader, and a scroll progress indicator to enhance user experience.
 
-## 📌 About Me
+## 🛠️ Technologies Used
 
-Hey, I’m **Ayush Das**, currently pursuing B.Tech in Information Technology at **IIIT Una**. I love building modern web apps, exploring full-stack development, and crafting beautiful yet functional interfaces. My current tech stack revolves around the **MERN** ecosystem with a focus on **Next.js + TypeScript**.
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Notifications**: [Sonner](https://sonner.emilkowal.ski/)
 
-Beyond tech, I'm deeply passionate about fitness — documenting my journey on [Instagram](https://instagram.com/das.thetics) and applying that same discipline to coding and problem-solving.
+## 🚀 Getting Started
 
----
+To get a local copy up and running, follow these simple steps.
 
-## 🛠️ Tech Stack
+### Prerequisites
 
-- **Framework:** Next.js 15 (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS + Custom Theme Tokens
-- **Icons:** Lucide, React Icons
-- **Forms & Mail:** EmailJS
-- **Deployment:** Vercel
-- **Animations:** Framer Motion
-- **Design:** Mobile-first, fully responsive, dark/light mode
+Make sure you have Node.js (version 18.x or later) and npm/yarn/pnpm installed on your machine.
 
----
+### Installation
 
-## ✨ Key Features
+1.  **Clone the repository:**
+    ```sh
+    git clone https://github.com/your-username/your-portfolio-repo.git
+    ```
 
-- 🌓 **Dark / Light Mode** (auto-detect + theme tokens)
-- ⚡ Smooth scroll-to-section navigation
-- 🧠 **Minimalist Design** with clean layout and shadows
-- ✨ **Animated Navigation** with Framer Motion
-- 📩 Working **Contact Form** via EmailJS + toast feedback
-- 💼 Projects modal with rich details and hover effects
+2.  **Navigate to the project directory:**
+    ```sh
+    cd your-portfolio-repo
+    ```
 
----
+3.  **Install dependencies:**
+    ```sh
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+    ```
 
-## 🧪 Running Locally
+### Running the Development Server
 
-```bash
-git clone https://github.com/Ayushdas1904/portfolio.git
-cd portfolio
-npm install
+Start the development server with the following command:
+
+```sh
 npm run dev
-````
-
-> Make sure to add the following environment variables in a `.env.local` file if you're using EmailJS:
-
-```env
-NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+# or
+yarn dev
+# or
+pnpm dev
 ```
 
----
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 📬 Contact Me
+## 🤝 Contributing
 
-If you like my work, let’s get in touch:
-
-* 📩 Email: [ayushdas1904@gmail.com](mailto:ayushdas1904@gmail.com)
-* 🔗 [LinkedIn](https://linkedin.com/in/ayush-das-4674a1239/)
-* 💻 [GitHub](https://github.com/Ayushdas1904)
-* 📸 [Instagram](https://instagram.com/das.thetics)
-
----
-
-## 📄 License
-
-This project is open source and free to use. Feel free to fork and build on top of it, just give credit where due.
-
----
-
-### 💡 Bonus Tip
-
-Want to use this portfolio as a base? Go for it. Clone it, customize it, and make it yours.
-
----
-
-> Built with passion, pixels, and a little bit of 💪 gym discipline.
-
----
+This is a personal project, so I'm not actively looking for contributions. However, if you have suggestions or find a bug, feel free to open an issue!
