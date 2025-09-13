@@ -6,8 +6,8 @@ import Typewriter from 'typewriter-effect';
 import scrollDownAnimation from '@/public/scroll-down.json';
 import { jetbrainsMono } from '@/app/font';
 import Image from 'next/image';
-import AyushImg from "@/public/Ayush.jpg";
-import AyushImg2 from "@/public/Ayush2.jpg"
+import AyushImg from "@/public/grad2.png";
+import AyushImg2 from "@/public/grad2.png"
 import { MapPin } from 'lucide-react';
 import Socials from '../Socials';
 import { InteractiveHoverButton } from '../ui/interactive-hover-button';
@@ -19,7 +19,7 @@ export function Home() {
         link.href = '/resume.pdf';
         link.download = 'Lekoana_Tebelelo_resume.pdf';
         document.body.appendChild(link);
-        link.click();
+        link.click();On 
         document.body.removeChild(link);
     };
 
@@ -78,7 +78,7 @@ export function Home() {
 
                 {/* Image Section */}
                 <div
-                    className="w-55 h-55 sm:w-85 sm:h-85 relative shrink-0 rounded-full overflow-hidden transition-all duration-300"
+                    className="w-65 h-65 sm:w-100 sm:h-100 relative shrink-0 rounded-full overflow-hidden transition-all duration-300"
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                 >
@@ -87,9 +87,12 @@ export function Home() {
                         src={AyushImg}
                         alt="Ayush"
                         fill
+                        width={100}
+                        height={100}
                         className={`object-cover rounded-full transition-opacity duration-500 ${isHovered ? "opacity-0" : "opacity-100"
                             }`}
                     />
+
 
                     {/* Hover image */}
                     <Image
@@ -98,8 +101,10 @@ export function Home() {
                         fill
                         className={`object-cover rounded-full absolute top-0 left-0 transition-opacity duration-500 ${isHovered ? "opacity-100" : "opacity-0"
                             }`}
+                        }`}
                     />
                 </div>
+
 
             </div>
 
