@@ -19,7 +19,7 @@ export function Home() {
         link.href = '/resume.pdf';
         link.download = 'Lekoana_Tebelelo_resume.pdf';
         document.body.appendChild(link);
-        link.click();On 
+        link.click();
         document.body.removeChild(link);
     };
 
@@ -30,8 +30,8 @@ export function Home() {
 
     return (
         <div id='home' className="w-full max-w-4xl flex flex-col items-center justify-center px-6 pt-20 pb-65 sm:min-h-screen relative">
-            <div className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-10 w-full max-w-5xl">
-                <div className="flex-1">
+            <div className="flex flex-col-reverse md:flex-row md:items-center justify-between gap-10 w-full">
+                <div className="flex-1 md:max-w-lg">
                     <div className="flex items-center gap-3">
                         <h1 className="text-4xl sm:text-6xl font-bold ">
                             Hi, I&apos;m <span className='text-[#e8390d]'>Tebelelo</span>
@@ -78,7 +78,7 @@ export function Home() {
 
                 {/* Image Section */}
                 <div
-                    className="w-65 h-65 sm:w-100 sm:h-100 relative shrink-0 rounded-full overflow-hidden transition-all duration-300"
+                    className="w-64 h-64 sm:w-80 sm:h-80 relative shrink-0 rounded-full overflow-hidden transition-all duration-300"
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                 >
@@ -87,9 +87,7 @@ export function Home() {
                         src={AyushImg}
                         alt="Ayush"
                         fill
-                        width={100}
-                        height={100}
-                        className={`object-cover rounded-full transition-opacity duration-500 ${isHovered ? "opacity-0" : "opacity-100"
+                        className={`object-contain rounded-full transition-opacity duration-500 ${isHovered ? "opacity-0" : "opacity-100"
                             }`}
                     />
 
@@ -99,8 +97,7 @@ export function Home() {
                         src={AyushImg2}
                         alt="Ayush Hover"
                         fill
-                        className={`object-cover rounded-full absolute top-0 left-0 transition-opacity duration-500 ${isHovered ? "opacity-100" : "opacity-0"
-                            }`}
+                        className={`object-contain rounded-full absolute top-0 left-0 transition-opacity duration-500 ${isHovered ? "opacity-100" : "opacity-0"
                         }`}
                     />
                 </div>
