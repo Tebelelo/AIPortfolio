@@ -42,7 +42,7 @@ const projects = [
   {
     title: "Review Sentiment Analyzer",
     description: "An AI-powered review sentiment analysis tool desgned for businesses to analyze customer feedback and improve their services.",
-    thumbnail: "/project3.png",
+    thumbnail: "/Project3.png",
     techStack: ["react","ts"],
     gradient: "#64e, rgb(13, 1, 60)",
     github: "https://github.com/RockyPacks/Sentiment-Analysis.git",
