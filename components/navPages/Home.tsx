@@ -7,26 +7,19 @@ import scrollDownAnimation from '@/public/scroll-down.json';
 import { jetbrainsMono } from '@/app/font';
 import Image from 'next/image';
 import AyushImg from "@/public/grad2.png";
-import AyushImg2 from "@/public/grad2.png"
 import { MapPin } from 'lucide-react';
 import Socials from '../Socials';
 import { InteractiveHoverButton } from '../ui/interactive-hover-button';
-export function Home() {
-    const [isHovered, setIsHovered] = useState(false);
+import { useReducedMotion } from 'framer-motion';
 
-    const handleDownload = () => {
-        const link = document.createElement('a');
-        link.href = '/resume.pdf';
-        link.download = 'Lekoana_Tebelelo_resume.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
+export function Home() {
+    const [isHandHovered, setIsHandHovered] = useState(false);
+    const [isImageHovered, setIsImageHovered] = useState(false);
+    const shouldReduceMotion = useReducedMotion();
 
     const handleViewResume = () => {
         window.open('/resume.pdf', '_blank');
-        };
-    
+    };
 
     return (
         <div id='home' className="w-full max-w-4xl flex flex-col items-center justify-center px-6 pt-20 pb-65 sm:min-h-screen relative">
@@ -38,11 +31,11 @@ export function Home() {
                         </h1>
                         <span
                             className="text-4xl sm:text-5xl"
-                            onMouseEnter={() => setIsHovered(true)}
-                            onMouseLeave={() => setIsHovered(false)}
+                            onMouseEnter={() => setIsHandHovered(true)}
+                            onMouseLeave={() => setIsHandHovered(false)}
                             style={{
                                 transformOrigin: '70% 70%',
-                                animation: isHovered ? 'wave 1.2s ease-in-out infinite' : 'none',
+                                animation: isHandHovered && !shouldReduceMotion ? 'wave 1.2s ease-in-out infinite' : 'none',
                                 display: 'inline-block',
                             }}
                         >
@@ -67,38 +60,21 @@ export function Home() {
                         <Socials />
                         <InteractiveHoverButton onClick={handleViewResume} />
                     </div>
-
-
-                    {/* <p
-                        className={`mt-4 text-sm sm:text-lg dark:text-zinc-500 text-justify leading-relaxed ${jetbrainsMono.className}`}
-                    >
-                        B.Tech IT student at IIIT Una. MERN stack developer building practical projects and improving problem-solving with DSA in C++.
-                    </p> */}
                 </div>
 
                 {/* Image Section */}
                 <div
                     className="w-64 h-64 sm:w-80 sm:h-80 relative shrink-0 rounded-full overflow-hidden transition-all duration-300"
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
+                    onMouseEnter={() => setIsImageHovered(true)}
+                    onMouseLeave={() => setIsImageHovered(false)}
                 >
-                    {/* Base image */}
                     <Image
-                        src={AyushImg}
+                        // NOTE: You are using the same image for the base and hover states.
+                        // You might want to use a different image for `isImageHovered ? AyushImg2 : AyushImg`
+                        src={isImageHovered ? AyushImg : AyushImg}
                         alt="Ayush"
                         fill
-                        className={`object-contain rounded-full transition-opacity duration-500 ${isHovered ? "opacity-0" : "opacity-100"
-                            }`}
-                    />
-
-
-                    {/* Hover image */}
-                    <Image
-                        src={AyushImg2}
-                        alt="Ayush Hover"
-                        fill
-                        className={`object-contain rounded-full absolute top-0 left-0 transition-opacity duration-500 ${isHovered ? "opacity-100" : "opacity-0"
-                        }`}
+                        className="object-contain rounded-full transition-opacity duration-300"
                     />
                 </div>
 

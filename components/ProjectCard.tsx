@@ -8,6 +8,8 @@ interface ProjectCardProps {
     thumbnail: string;
     techStack: string[];
     gradient: string;
+    descriptionColor?: string;
+    buttonTextColor?: string;
     onClick?: () => void;
 }
 
@@ -17,6 +19,8 @@ export default function ProjectCard({
     thumbnail,
     techStack,
     gradient,
+    descriptionColor = "text-white/90", // Default color
+    buttonTextColor = "text-white", // Default color
     onClick,
 }: ProjectCardProps) {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -45,48 +49,53 @@ export default function ProjectCard({
     return (
         <div
             onClick={onClick}
-            className="relative cursor-pointer border-[10px] dark:border-slate-900 rounded-xl overflow-hidden group transition-all duration-300"
+            className="relative cursor-pointer border-[10px] dark:border-slate-900 rounded-xl overflow-hidden group transition-all duration-300 h-[400px] flex flex-col"
             style={{
                 ...(isDarkMode ? lightShadow : darkShadow),
-                background: `radial-gradient(circle at 50% 0%, ${gradient})`,
             }}
         >
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0" />
+            {/* Background Image */}
+            <Image
+                src={thumbnail}
+                alt={title}
+                layout="fill"
+                objectFit="cover"
+                className="absolute inset-0 z-0 transition-all duration-500 group-hover:scale-110 group-hover:blur-sm"
+            />
+            {/* Gradient Overlay for text readability */}
+            <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
 
             {/* Main content */}
-            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 px-6 pt-4">
-                {/* Text */}
-                <div className="text-white w-full md:w-2/3">
+            <div className="relative z-20 flex flex-col flex-grow p-6 justify-between">
+                {/* Top part: Title and Description */}
+                <div className="text-white">
                     <h2 className="text-xl md:text-2xl font-bold">{title}</h2>
-                    <p className="mt-2 text-sm md:text-base text-white/80">{description}</p>
-                </div>
-
-                {/* Tech stack with overlapping icons */}
-                <div className="flex justify-center md:justify-end transition-all duration-500">
-                    {techStack.map((tech, index) => (
-                        <div
-                            key={index}
-                            className={`w-12 h-12 rounded-full bg-white dark:bg-neutral-900 flex items-center justify-center text-[24px] sm:text-[28px] shadow-md transition-all duration-500
-        -ml-4 group-hover:ml-0`}
-                            style={{ zIndex: techStack.length - index }}
-                        >
-                            {techIconMap[tech] || null}
+                    <p className={`mt-2 text-sm md:text-base ${descriptionColor} font-semibold drop-shadow-md opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-100`}>
+                        {description}
+                    </p>
+                    {/* "View Project" button appears on hover */}
+                    <div className="mt-4 opacity-0 transform -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-200">
+                        <div className={`inline-block px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg ${buttonTextColor} font-semibold text-sm`}>
+                            View Project
                         </div>
-                    ))}
+                    </div>
                 </div>
 
-            </div>
-
-            {/* Thumbnail */}
-            <div className="relative bottom-[-50px] w-full flex justify-center items-end z-10 max-h-[180px] sm:max-h-[300px] md:max-h-none">
-                <Image
-                    src={thumbnail}
-                    alt="project"
-                    width={400}
-                    height={300}
-                    className="duration-500 group-hover:-translate-y-4 object-contain rounded-t-2xl w-[80%]"
-                />
+                {/* Bottom part: Tech stack */}
+                <div className="mt-auto">
+                    <div className="flex justify-end transition-all duration-500">
+                        {techStack.map((tech, index) => (
+                            <div
+                                key={index}
+                                className={`w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-[24px] sm:text-[28px] shadow-md transition-all duration-500
+            -ml-4 group-hover:ml-0`}
+                                style={{ zIndex: techStack.length - index }}
+                            >
+                                {techIconMap[tech] || null}
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
         </div>
     );

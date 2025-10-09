@@ -26,7 +26,7 @@ const projects = [
     description: "An AI-powered study companion taking advantage of Gemini Pro to provide personalized learning experiences.",
     thumbnail: "/project1.png",
     techStack: ["ts", "react", "firebase"],
-    gradient: "#51fbfb, rgb(13, 1, 60)",
+    gradient: "#8A2BE2, rgb(13, 1, 60)",
     github: "https://github.com/MediLex-Tech-group/AIStudyBuddy.git",
     live: "https://ai-study-buddy-bmwm.vercel.app/",
   },
@@ -35,16 +35,18 @@ const projects = [
     description: "Your personal ATS-friendly resume builder with customizable templates and easy export options.Leverages the gemini API for enhanced user experience.",
     thumbnail: "/project2.1.png",
     techStack: ["react","ts"],
-    gradient: "#14f195, rgb(13, 1, 60)",
+    gradient: "#8A2BE2, rgb(13, 1, 60)",
     github: "https://kagisogotech.github.io/ResumeGen/loggedIn.html",
     live: "https://kagisogotech.github.io/ResumeGen/",
+    descriptionColor: "text-black",
+    buttonTextColor: "text-black",
   },
   {
     title: "Review Sentiment Analyzer",
     description: "An AI-powered review sentiment analysis tool desgned for businesses to analyze customer feedback and improve their services.",
     thumbnail: "/Project3.png",
     techStack: ["react","ts"],
-    gradient: "#64e, rgb(13, 1, 60)",
+    gradient: "#8A2BE2, rgb(13, 1, 60)",
     github: "https://github.com/RockyPacks/Sentiment-Analysis.git",
     live: "https://sentiment-analysis-two-puce.vercel.app/",
   },
@@ -56,7 +58,7 @@ export function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <div id="projects" className={`  ${jetbrainsMono.className} flex flex-col gap-10 items-center justify-center px-4 pb-20 w-full max-w-4xl`}>
+    <div id='projects' className={`  ${jetbrainsMono.className} flex flex-col gap-10 items-center justify-center px-4 pb-20 w-full max-w-7xl`}>
       {/* Header */}
       <div className="flex flex-col items-center justify-center gap-2">
         <p className="flex gap-2 text-[#e8390d]">
@@ -68,7 +70,7 @@ export function Projects() {
       </div>
 
       {/* Cards */}
-      <div className={`${jetbrainsMono.className} flex flex-col gap-6 w-full `}>
+      <div className={`${jetbrainsMono.className} grid w-full grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3`}>
         {projects.map((project, index) => (
           <ProjectCard
             key={index}
