@@ -17,7 +17,7 @@ const experiences = [
     company: "UVU Africa",
     date: "August 2025 - Present",
     description:
-      "Participating in a structured internship focused on building practical software development skills     through self-paced courses and project-based learning. Gaining hands-on experience with full-stack development, version control (Git/GitHub), and collaborative workflows",
+      "Participating in a structured internship focused on building practical software development skills   through self-paced courses and project-based learning.Gaining hands-on experience with full-stack development, version control (Git/GitHub), and collaborative workflows",
   },
 ];
 
@@ -44,7 +44,7 @@ export const Experience = () => {
               </div>
             </div>
             <div className="w-1/2">
-              <div className={`p-6 bg-background/50 dark:bg-zinc-900/50 border border-border rounded-xl hover:border-[#e8390d] transition-all duration-300 transform hover:-translate-y-2 shadow-md hover:shadow-lg dark:shadow-none ${index % 2 === 0 ? "mr-4 text-left" : "ml-4 text-right"}`}>
+              <div className={`p-6 bg-background/50 dark:bg-zinc-900/50 border border-border rounded-xl hover:border-[#e8390d] transition-all duration-300 transform hover:-translate-y-2 shadow-md hover:shadow-lg dark:shadow-none ${index % 2 === 0 ? "mr-4" : "ml-4"} text-left`}>
                 <h3 className="font-bold text-lg text-[#e8390d]">{exp.role}</h3>
                 <p className="italic text-foreground/80">{exp.company}</p>
                 <p className="text-sm text-muted-foreground mb-2">{exp.date}</p>
