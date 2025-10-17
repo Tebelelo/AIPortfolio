@@ -56,7 +56,7 @@ const projects = [
     title: "Review Sentiment Analyzer",
     description:
       "An AI-powered review sentiment analysis tool desgned for businesses to analyze customer feedback and improve their services.",
-    thumbnail: "/Project3.png",
+    thumbnail: "/project3.png",
     techStack: ["react", "ts"],
     gradient: "#8A2BE2, rgb(13, 1, 60)",
     github: "https://github.com/RockyPacks/Sentiment-Analysis.git",
@@ -66,7 +66,7 @@ const projects = [
     title: "Todo App",
     description:
       "A responsive To-Do List web application to help users manage daily tasks efficiently",
-    thumbnail: "/Project4.jpg",
+    thumbnail: "/project4.jpg",
     techStack: ["html", "css", "javascript"],
     gradient: "#8A2BE2, rgb(13, 1, 60)",
     descriptionColor: "text-black",
@@ -77,7 +77,7 @@ const projects = [
     title: "Practice Exam Generator",
     description:
       "Developed a web application that allows users to create, customize, and manage exams with various question types.",
-    thumbnail: "/Project5.jpg",
+    thumbnail: "/project5.jpg",
     techStack: ["html", "css", "javascript", "node", "gemini"],
     gradient: "#8A2BE2, rgb(13, 1, 60)",
     descriptionColor: "text-black",
@@ -88,7 +88,7 @@ const projects = [
     title: "Omnifood",
     description:
       "Developed a static, responsive landing page for a fictional nutrition food brand to promote and sell healthy food products.",
-    thumbnail: "/Project6.PNG",
+    thumbnail: "/project6.png",
     techStack: ["html", "css", "javascript"],
     gradient: "#8A2BE2, rgb(13, 1, 60)",
     descriptionColor: "text-black",
