@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import { techIconMap } from "./navPages/Projects";
 
 interface ProjectCardProps {
@@ -10,6 +11,8 @@ interface ProjectCardProps {
     gradient: string;
     descriptionColor?: string;
     buttonTextColor?: string;
+    live: string;
+    github: string;
     onClick?: () => void;
 }
 
@@ -21,6 +24,8 @@ export default function ProjectCard({
     gradient,
     descriptionColor = "text-white/90", // Default color
     buttonTextColor = "text-white", // Default color
+    live,
+    github,
     onClick,
 }: ProjectCardProps) {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -47,12 +52,15 @@ export default function ProjectCard({
     };
 
     return (
-        <div
-            onClick={onClick}
-            className="relative cursor-pointer border-[10px] dark:border-slate-900 rounded-xl overflow-hidden group transition-all duration-300 h-[400px] flex flex-col"
-            style={{
-                ...(isDarkMode ? lightShadow : darkShadow),
+        <Link
+            href={live || github}
+            onClick={(e) => {
+                e.preventDefault();
+                onClick?.();
             }}
+            className="block relative border-[10px] dark:border-slate-900 rounded-xl overflow-hidden group transition-all duration-300 h-[400px] flex flex-col"
+            style={isDarkMode ? lightShadow : darkShadow}
+            aria-label={`View project: ${title}`}
         >
             {/* Background Image */}
             <Image
@@ -97,6 +105,6 @@ export default function ProjectCard({
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 }

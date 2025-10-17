@@ -6,18 +6,19 @@ import { Briefcase } from "lucide-react";
 
 const experiences = [
   {
-    role: "Data Science Intern",
-    company: "Absa Group",
-    date: "Jan 2024 - Present",
-    description: "Developed and implemented machine learning models to analyze customer data, resulting in a 15% improvement in fraud detection accuracy. Collaborated with cross-functional teams to integrate AI solutions into existing banking products.",
+    role: "Bootcamp Assistant",
+    company: "WethinkCode",
+    date: "May 2025 - July 2025",
+    description:
+      "Assisted bootcamp participants in understanding and applying Python programming concepts through clear explanations and practical examples.Provided one-on-one and group support to enhance problem-solving skills and foster independent learning.",
   },
   {
     role: "Software Developer Intern",
-    company: "Capaciti",
-    date: "Jun 2023 - Dec 2023",
-    description: "Contributed to the development of a new mobile banking app using React Native. Wrote and maintained unit tests, ensuring code quality and reliability. Participated in agile development cycles and code reviews.",
+    company: "UVU Africa",
+    date: "August 2025 - Present",
+    description:
+      "Participating in a structured internship focused on building practical software development skills     through self-paced courses and project-based learning. Gaining hands-on experience with full-stack development, version control (Git/GitHub), and collaborative workflows",
   },
-  // You can add more experiences here
 ];
 
 export const Experience = () => {
