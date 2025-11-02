@@ -47,7 +47,7 @@ const projects = [
     thumbnail: "/project2.1.png",
     techStack: ["react", "ts"],
     gradient: "#8A2BE2, rgb(13, 1, 60)",
-    github: "https://kagisogotech.github.io/ResumeGen/loggedIn.html",
+    github: "https://github.com/MediLex-Tech-group/ResumeGen.git",
     live: "https://medilex-tech-group.github.io/ResumeGen/",
     descriptionColor: "text-black",
     buttonTextColor: "text-black",
