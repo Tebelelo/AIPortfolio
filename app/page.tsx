@@ -2,6 +2,7 @@
 import {Home} from "@/components/navPages/Home"
 import {About} from "@/components/navPages/About";
 import { Projects } from '@/components/navPages/Projects';
+import { Experience } from '@/components/navPages/Experience';
 import Contact from '@/components/navPages/Contact';
 import SkillsSection from "@/components/navPages/Skills";
 import Head from 'next/head';
@@ -14,6 +15,7 @@ export default function HomePage() {
     <main className={`flex flex-col items-center justify-center scroll-smooth`}>
       <Home/>
       <About/>
+      <Experience/>
       <Projects/>
       <SkillsSection/>
       <Contact/>

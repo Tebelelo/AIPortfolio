@@ -7,42 +7,35 @@ import scrollDownAnimation from '@/public/scroll-down.json';
 import { jetbrainsMono } from '@/app/font';
 import Image from 'next/image';
 import AyushImg from "@/public/grad2.png";
-import AyushImg2 from "@/public/grad2.png"
 import { MapPin } from 'lucide-react';
 import Socials from '../Socials';
 import { InteractiveHoverButton } from '../ui/interactive-hover-button';
-export function Home() {
-    const [isHovered, setIsHovered] = useState(false);
+import { useReducedMotion } from 'framer-motion';
 
-    const handleDownload = () => {
-        const link = document.createElement('a');
-        link.href = '/resume.pdf';
-        link.download = 'Lekoana_Tebelelo_resume.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
+export function Home() {
+    const [isHandHovered, setIsHandHovered] = useState(false);
+    const [isImageHovered, setIsImageHovered] = useState(false);
+    const shouldReduceMotion = useReducedMotion();
 
     const handleViewResume = () => {
         window.open('/resume.pdf', '_blank');
-        };
-    
+    };
 
     return (
         <div id='home' className="w-full max-w-4xl flex flex-col items-center justify-center px-6 pt-20 pb-65 sm:min-h-screen relative">
-            <div className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-10 w-full max-w-5xl">
-                <div className="flex-1">
+            <div className="flex flex-col-reverse md:flex-row md:items-center justify-between gap-10 w-full">
+                <div className="flex-1 md:max-w-lg">
                     <div className="flex items-center gap-3">
                         <h1 className="text-4xl sm:text-6xl font-bold ">
                             Hi, I&apos;m <span className='text-[#e8390d]'>Tebelelo</span>
                         </h1>
                         <span
                             className="text-4xl sm:text-5xl"
-                            onMouseEnter={() => setIsHovered(true)}
-                            onMouseLeave={() => setIsHovered(false)}
+                            onMouseEnter={() => setIsHandHovered(true)}
+                            onMouseLeave={() => setIsHandHovered(false)}
                             style={{
                                 transformOrigin: '70% 70%',
-                                animation: isHovered ? 'wave 1.2s ease-in-out infinite' : 'none',
+                                animation: isHandHovered && !shouldReduceMotion ? 'wave 1.2s ease-in-out infinite' : 'none',
                                 display: 'inline-block',
                             }}
                         >
@@ -54,7 +47,7 @@ export function Home() {
                     <span className="tailwind-wrapper mt-4 text-lg sm:text-3xl font-medium block text-left text-zinc-800 dark:text-zinc-200">
                         <Typewriter
                             options={{
-                                strings: ['Full-Stack Developer with AI/ML Focus', 'DATA SCIENTIST'],
+                                strings: ['Full-Stack Developer', 'DATA SCIENTIST'],
                                 autoStart: true,
                                 loop: true,
                                 delay: 20,
@@ -67,41 +60,21 @@ export function Home() {
                         <Socials />
                         <InteractiveHoverButton onClick={handleViewResume} />
                     </div>
-
-
-                    {/* <p
-                        className={`mt-4 text-sm sm:text-lg dark:text-zinc-500 text-justify leading-relaxed ${jetbrainsMono.className}`}
-                    >
-                        B.Tech IT student at IIIT Una. MERN stack developer building practical projects and improving problem-solving with DSA in C++.
-                    </p> */}
                 </div>
 
                 {/* Image Section */}
                 <div
-                    className="w-65 h-65 sm:w-100 sm:h-100 relative shrink-0 rounded-full overflow-hidden transition-all duration-300"
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
+                    className="w-64 h-64 sm:w-80 sm:h-80 relative shrink-0 rounded-full overflow-hidden transition-all duration-300"
+                    onMouseEnter={() => setIsImageHovered(true)}
+                    onMouseLeave={() => setIsImageHovered(false)}
                 >
-                    {/* Base image */}
                     <Image
-                        src={AyushImg}
+                        // NOTE: You are using the same image for the base and hover states.
+                        // You might want to use a different image for `isImageHovered ? AyushImg2 : AyushImg`
+                        src={isImageHovered ? AyushImg : AyushImg}
                         alt="Ayush"
-                        // fill
-                        width={100}
-                        height={100}
-                        className={`object-cover rounded-full transition-opacity duration-500 ${isHovered ? "opacity-0" : "opacity-100"
-                            }`}
-                    />
-
-
-                    {/* Hover image */}
-                    <Image
-                        src={AyushImg2}
-                        alt="Ayush Hover"
-                        // fill
-                        className={`object-cover rounded-full absolute top-0 left-0 transition-opacity duration-500 ${isHovered ? "opacity-100" : "opacity-0"
-                            }`}
-                
+                        fill
+                        className="object-contain rounded-full transition-opacity duration-300"
                     />
                 </div>
 

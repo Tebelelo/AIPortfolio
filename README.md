@@ -63,6 +63,6 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 🤝 Contributing
+## 🤝 Deployment link
 
-This is a personal project, so I'm not actively looking for contributions. However, if you have suggestions or find a bug, feel free to open an issue!
+**https://ai-portfolio-liart.vercel.app/**
