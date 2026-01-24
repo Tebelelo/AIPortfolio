@@ -19,7 +19,7 @@ export function Home() {
         link.href = '/resume.pdf';
         link.download = 'Lekoana_Tebelelo_resume.pdf';
         document.body.appendChild(link);
-        link.click();On 
+        link.click();
         document.body.removeChild(link);
     };
 
@@ -86,7 +86,7 @@ export function Home() {
                     <Image
                         src={AyushImg}
                         alt="Ayush"
-                        fill
+                        // fill
                         width={100}
                         height={100}
                         className={`object-cover rounded-full transition-opacity duration-500 ${isHovered ? "opacity-0" : "opacity-100"
@@ -98,10 +98,10 @@ export function Home() {
                     <Image
                         src={AyushImg2}
                         alt="Ayush Hover"
-                        fill
+                        // fill
                         className={`object-cover rounded-full absolute top-0 left-0 transition-opacity duration-500 ${isHovered ? "opacity-100" : "opacity-0"
                             }`}
-                        }`}
+                
                     />
                 </div>
 

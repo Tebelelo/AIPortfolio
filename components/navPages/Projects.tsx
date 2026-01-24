@@ -30,24 +30,6 @@ const projects = [
     github: "https://github.com/MediLex-Tech-group/AIStudyBuddy.git",
     live: "https://ai-study-buddy-bmwm.vercel.app/",
   },
-  {
-    title: "Resume Builder",
-    description: "Your personal ATS-friendly resume builder with customizable templates and easy export options.Leverages the gemini API for enhanced user experience.",
-    thumbnail: "/project2.1.png",
-    techStack: ["react","ts"],
-    gradient: "#14f195, rgb(13, 1, 60)",
-    github: "https://kagisogotech.github.io/ResumeGen/loggedIn.html",
-    live: "https://kagisogotech.github.io/ResumeGen/",
-  },
-  {
-    title: "Review Sentiment Analyzer",
-    description: "An AI-powered review sentiment analysis tool desgned for businesses to analyze customer feedback and improve their services.",
-    thumbnail: "/project3.png",
-    techStack: ["react","ts"],
-    gradient: "#64e, rgb(13, 1, 60)",
-    github: "https://github.com/RockyPacks/Sentiment-Analysis.git",
-    live: "https://sentiment-analysis-two-puce.vercel.app/",
-  },
 ];
 
 export function Projects() {
