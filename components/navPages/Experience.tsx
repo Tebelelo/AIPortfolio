@@ -13,9 +13,9 @@ const experiences = [
       "Assisted bootcamp participants in understanding and applying Python programming concepts through clear explanations and practical examples.Provided one-on-one and group support to enhance problem-solving skills and foster independent learning.",
   },
   {
-    role: "Software Developer Intern",
+    role: "Software Developer trainee",
     company: "UVU Africa",
-    date: "August 2025 - Present",
+    date: "August 2025 - December 2025",
     description:
       "Participating in a structured internship focused on building practical software development skills   through self-paced courses and project-based learning.Gaining hands-on experience with full-stack development, version control (Git/GitHub), and collaborative workflows",
   },
